@@ -38,7 +38,7 @@
               pkgs.entr
               pkgs.fd
               pkgs.fish
-              pkgs.tre
+              pkgs.tree
               pkgs.just
               pkgs.jq
               pkgs.nixfmt-rfc-style
