@@ -288,27 +288,12 @@
   :config
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows))
 
-(use-package repeat-mode
+(use-package repeat
+  :demand t
   :config
   (repeat-mode)
   :custom
-  (repeat-echo-function 'ignore)
-  :bind (:map ctl-x-map
-              :repeat-map window-repeat-map
-              ("o" . other-window)
-              ("w" . window-configuration-to-register)
-              ("0" . delete-window)
-              ("1" . zygospore-toggle-delete-other-windows)
-              ("2" . split-window-below)
-              ("3" . split-window-right)
-              ("C-3" . split-only-this-window-horizontally)
-              ("M-2" . resplit-windows-vertically)
-              ("M-3" . resplit-windows-horizontally)
-              ("+" . balance-windows)
-              ("-" . shrink-window-if-larger-than-buffer)
-              ("^" . enlarge-window)
-              ("{" . shrink-window-horizontally)
-              ("}" . enlarge-window-horizontally)))
+  (repeat-echo-function 'repeat-echo-message))
 
 (use-package move-dup
   :bind
