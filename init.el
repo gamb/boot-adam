@@ -399,12 +399,9 @@
   (define-key paredit-mode-map (kbd "C-M-<up>") 'paredit-splice-sexp-killing-backward))
 
 (use-package clojure-mode
-  :after eglot
-  :hook
-  (clojure-mode . paredit-mode)
   :config
-  (dolist (hook '(clojure-mode-hook))
-    (add-hook hook 'eglot-ensure))
+  (add-hook 'clojure-mode-hook #'paredit-mode)
+  (add-hook 'clojure-mode-hook #'electric-pair-mode)
   :demand t)
 
 (use-package ocaml-ts-mode
