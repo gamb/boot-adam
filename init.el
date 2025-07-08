@@ -326,6 +326,8 @@
 (use-package fullframe)
 
 (use-package cider
+  :custom
+  (cider-xref-fn-depth 20)
   :bind
   (:map cider-mode-map
 	("M-.") ;; Just use lsp xref
