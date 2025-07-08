@@ -492,9 +492,9 @@
     (let (completion-cycle-threshold completion-cycling)
       (apply #'consult-completion-in-region (cl-subseq completion-in-region--data 0 3)))))
 
-(use-package hide-mode-line
-  :config
-  (global-hide-mode-line-mode))
+;; (use-package hide-mode-line
+;;   :config
+;;   (global-hide-mode-line-mode))
 
 (use-package whole-line-or-region
   :demand t
