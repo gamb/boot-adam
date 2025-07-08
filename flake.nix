@@ -32,18 +32,20 @@
           default = pkgs.buildEnv {
             name = "my-profile";
             paths = [
+	      pkgs.bun
               pkgs.claude-code
               pkgs.direnv
-              pkgs.nix-direnv
               pkgs.entr
               pkgs.fd
               pkgs.fish
-              pkgs.tree
-              pkgs.just
+              pkgs.git
               pkgs.jq
+              pkgs.just
+              pkgs.nix-direnv
               pkgs.nixfmt-rfc-style
               pkgs.ripgrep
               pkgs.sqlite
+              pkgs.tree
               pkgs.unzip
               (pkgs.aspellWithDicts (dicts: with dicts; [ en ]))
               my-emacs
