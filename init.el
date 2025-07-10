@@ -81,19 +81,25 @@
   (consult-narrow-key ">")
   (consult-preview-key "M-,")
   :config
-  (defun consult-ripgrep-at-point (&optional dir initial)
-    "Invokes `consult-ripgrep' using symbol at point as the initial search term.
+
+  (defcustom consult-preferred-grep-function #'consult-ripgrep
+    "The consult grep function to use in `consult-grep-at-point'."
+    :type 'function
+    :group 'consult)
+
+  (defun consult-grep-at-point (&optional dir initial)
+    "Invokes the configured grep function using symbol at point as the initial search term.
 
      If called with a prefix argument, grep inside the `default-directory'
      instead of project-wide."
     (interactive (list (and current-prefix-arg default-directory)
                        (when-let ((s (symbol-at-point)))
 			 (symbol-name s))))
-    (consult-ripgrep dir initial))
+    (funcall consult-preferred-grep-function dir initial))
   :bind
   (("C-x ," . consult-imenu)
    ("C-x b" . consult-buffer)
-   ("M-?" . consult-ripgrep-at-point)))
+   ("M-?" . consult-grep-at-point)))
 
 (use-package consult-imenu
   :after (consult))
