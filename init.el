@@ -79,7 +79,7 @@
   :custom
   (consult-mode t)
   (consult-narrow-key ">")
-  (consult-preview-key "M-,")
+  (consult-preview-key 'any)
   :config
 
   (defcustom consult-preferred-grep-function #'consult-ripgrep
