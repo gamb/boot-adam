@@ -21,6 +21,7 @@
   (ring-bell-function 'ignore)
   (global-goto-address-mode t)
   (tool-bar-mode nil)
+  (default-frame-alist '((alpha . (96 80))))
   :custom-face
   (default ((t (:family "Zed Mono" :height 160))))
   :config
