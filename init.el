@@ -38,11 +38,15 @@
 
 (use-package modus-themes
   :custom
-  (custom-enabled-themes '(modus-operandi)))
+  (modus-themes-common-palette-overrides
+   '((bg-main "#f5f5f5")))  ; light grey background
+  ;;(custom-enabled-themes '(modus-operandi))
+  )
 
 (use-package ef-themes
-  ;; :custom
-  ;; (custom-enabled-themes '(ef-light))
+  :custom
+  (ef-themes-to-toggle '(ef-owl ef-light))
+  (custom-enabled-themes '(ef-owl))
   )
 
 ;; (use-package avy
