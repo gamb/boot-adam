@@ -568,6 +568,13 @@ first occurance (not ARGth occurance)."
   :hook
   (prog-mode . maybe-enable-breadcrumb-mode))
 
+(use-package org
+  :bind
+  (("M-m" . org-roam-node-find)
+   ("C-c a" . org-agenda)
+   (:map org-mode-map
+	 ("C-k" . org-archive-subtree))))
+
 (use-package browse-kill-ring
   :bind
   ("M-Y" . browse-kill-ring))
