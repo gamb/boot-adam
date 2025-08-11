@@ -447,6 +447,19 @@
   :hook
   (typescript-ts-base-mode . electric-pair-mode))
 
+(defcustom prettier-executable (executable-find "prettier")
+  "Prettier executable."
+  :type 'string
+  :group 'prettier)
+
+(use-package css-mode
+  :hook
+  (css-mode . prettier-css-on-save-mode)
+  :config
+  (reformatter-define prettier-css
+    :program prettier-executable
+    :args '("--parser" "css")))
+
 (use-package justl
     :bind
     ("C-x j" . justl-exec-recipe-in-dir))

@@ -35,6 +35,7 @@
 	      pkgs.bun
               pkgs.claude-code
 	      pkgs.coreutils-prefixed
+	      pkgs.devenv
               pkgs.direnv
               pkgs.entr
               pkgs.fd
@@ -43,6 +44,7 @@
               pkgs.jq
               pkgs.just
               pkgs.ledger
+	      pkgs.nodePackages.prettier
               pkgs.nix-direnv
               pkgs.nixfmt-rfc-style
               pkgs.ripgrep

@@ -37,6 +37,7 @@
     ocaml-ts-mode
     orderless
     paredit
+    reformatter
     rg
     slime
     symbol-overlay
