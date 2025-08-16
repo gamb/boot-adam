@@ -49,6 +49,7 @@
               pkgs.nixfmt-rfc-style
               pkgs.ripgrep
               pkgs.sqlite
+	      pkgs.nodePackages.prettier
               pkgs.tree
               pkgs.unzip
               (pkgs.aspellWithDicts (dicts: with dicts; [ en ]))

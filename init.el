@@ -438,19 +438,23 @@
   (:map j-mode-map
 	("M-RET" . j-console-execute-line)))
 
+(defcustom prettier-executable (executable-find "prettier")
+  "Prettier executable."
+  :type 'string
+  :group 'prettier)
+
 (use-package typescript-ts-mode
   :demand t
   :config
   ;; TODO: capf snippets esp. to enable quick entry of jsx tags ??
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
   (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+  (reformatter-define prettier-ts
+    :program prettier-executable
+    :args '("--parser" "typescript"))
   :hook
-  (typescript-ts-base-mode . electric-pair-mode))
-
-(defcustom prettier-executable (executable-find "prettier")
-  "Prettier executable."
-  :type 'string
-  :group 'prettier)
+  (typescript-ts-base-mode . electric-pair-mode)
+  (typescript-ts-base-mode . prettier-ts-on-save-mode))
 
 (use-package css-mode
   :hook
