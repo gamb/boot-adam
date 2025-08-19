@@ -1,9 +1,7 @@
 {
   description = "Adam's Nix user profile";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  };
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
 
   outputs =
     { self, nixpkgs }:
@@ -35,7 +33,6 @@
               pkgs.bun
               pkgs.claude-code
               pkgs.coreutils-prefixed
-              pkgs.devenv
               pkgs.direnv
               pkgs.entr
               pkgs.fd
@@ -49,7 +46,7 @@
               pkgs.nixfmt-rfc-style
               pkgs.ripgrep
               pkgs.sqlite
-	      pkgs.nodePackages.prettier
+              pkgs.nodePackages.prettier
               pkgs.tree
               pkgs.unzip
               (pkgs.aspellWithDicts (dicts: with dicts; [ en ]))
