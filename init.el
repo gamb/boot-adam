@@ -21,11 +21,10 @@
   (ring-bell-function 'ignore)
   (global-goto-address-mode t)
   (tool-bar-mode nil)
-  (default-frame-alist '((alpha . (96 80))))
+  (indent-tabs-mode nil)
   :custom-face
-  (default ((t (:family "Zed Mono" :height 160))))
+  (default ((t (:family "DinaRemaster" :height 200))))
   :config
-
   (defun insert-font ()
     "Insert a font family name from system list."
     (interactive)
@@ -39,15 +38,11 @@
 (use-package modus-themes
   :custom
   (modus-themes-common-palette-overrides
-   '((bg-main "#f5f5f5")))  ; light grey background
-  ;;(custom-enabled-themes '(modus-operandi))
-  )
+   '((bg-main "#f5f5f5"))))
 
 (use-package ef-themes
   :custom
-  (ef-themes-to-toggle '(ef-owl ef-light))
-  (custom-enabled-themes '(ef-owl))
-  )
+  (ef-themes-to-toggle '(ef-owl ef-light)))
 
 ;; (use-package avy
 ;;   :bind
