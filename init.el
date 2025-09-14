@@ -40,8 +40,8 @@
 
 (use-package modus-themes
   :custom
-  (modus-themes-common-palette-overrides
-   '((bg-main "#f5f5f5"))))
+  (modus-operandi-palette-overrides
+   '((bg-main "#f0f0f0"))))
 
 (use-package ef-themes
   :custom
@@ -172,7 +172,15 @@
                 (ibuffer-do-sort-by-project-file-relative)))))
 
 (use-package ibuffer
-  :bind ("C-x C-b" . ibuffer))
+  :bind ("C-x C-b" . ibuffer)
+
+  :custom
+  (ibuffer-formats '((mark modified read-only locked
+                           " " (name 18 18 :left :elide)
+			   " " (size 9 -1 :right)
+			   " " (mode 16 16 :left :elide) " " project-file-relative)
+		     ;;(mark " " (name 16 -1) " " project-file-relative)
+                     )))
 
 ;; (use-package mode-line
 ;;   :custom-face
