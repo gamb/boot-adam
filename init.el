@@ -538,8 +538,6 @@
 
 ;; (use-package vterm)
 
-(use-package eat)
-
 (use-package hippie-exp
   :bind
   (("M-/" . hippie-expand))
