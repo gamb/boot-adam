@@ -290,8 +290,7 @@
 
 (use-package eat
   :bind
-  ;; TODO: prefix command C-u M-o to create a fresh eat
-  ("M-o" . eat-project-other-window))
+  ("M-o" . consult-buffer-other-window))
 
 (use-package zygospore
   :config
