@@ -22,13 +22,16 @@
   (global-goto-address-mode t)
   (tool-bar-mode nil)
   (indent-tabs-mode nil)
-  :custom-face
-  (default ((t (:family "DinaRemaster" :height 200))))
   :config
   (defun insert-font ()
     "Insert a font family name from system list."
     (interactive)
     (insert (completing-read "Font family: " (font-family-list))))
+
+  (defun quick-set-face ()
+    (interactive)
+    (let ((font-picked (completing-read "Font family: " (font-family-list))))
+      (set-face-attribute 'default nil :family font-picked :height 160)))
 
   (setq-default line-spacing 3
 		require-final-newline t)
